@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto de Consola - C# en Manjaro/Linux</title>
   <link rel="stylesheet" href="../../assets/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
+
 <body class="bg-dark text-light">
-  <div class="container py-5">
+  <div class="container py-5 bg-dark rounded shadow-lg border border-light px-4 ">
 
     <div class="text-center mb-5">
       <h1 class="fw-bold">Proyecto de Consola: POO en C#</h1>
@@ -20,29 +21,31 @@
     <!-- Descripción -->
     <section class="mb-5">
       <h3>Descripción</h3>
-      <p>Proyecto para practicar <strong>Programación Orientada a Objetos (POO)</strong> en C# usando .NET 9 y Visual Studio Code en Manjaro Linux.</p>
+      <p>Proyecto para practicar <strong>Programación Orientada a Objetos (POO)</strong> en C# usando .NET 9 y Visual
+        Studio Code en Manjaro Linux</p>
     </section>
 
     <!-- Crear proyecto -->
     <section class="mb-5">
       <h3>1- Crear un proyecto de consola</h3>
       <ol>
-        <li>Abre la <strong>terminal</strong> en Manjaro.</li>
+        <li>Abre la <strong>terminal</strong> en Manjaro</li>
         <li>Dirígete a la ubicación donde quieres crear tu proyecto:
-          <pre><code class="language-bash">cd ~/Documentos/Proyectos
+          <pre><code class="language-bash text-warning">cd ~/Documentos/Proyectos
 ls
 mkdir pj-console
 cd pj-console</code></pre>
         </li>
         <li>Crea un nuevo proyecto de consola:
-          <pre><code class="language-bash">dotnet new console -n ProyectoConsolaPOO</code></pre>
-          <blockquote>Esto creará una carpeta llamada <code>ProyectoConsolaPOO</code> con la estructura básica de un proyecto de consola.</blockquote>
+          <pre><code class="language-bash text-warning">dotnet new console -n ProyectoConsolaPOO</code></pre>
+          <blockquote>Esto creará una carpeta llamada <code class="text-primary">ProyectoConsolaPOO</code> con la
+            estructura básica de un proyecto de consola.</blockquote>
         </li>
         <li>Ingresa a la carpeta del proyecto:
-          <pre><code class="language-bash">cd ProyectoConsolaPOO</code></pre>
+          <pre><code class="language-bash text-warning">cd ProyectoConsolaPOO</code></pre>
         </li>
         <li>Abre el proyecto en VSCode:
-          <pre><code class="language-bash">code .</code></pre>
+          <pre><code class="language-bash text-warning">code .</code></pre>
         </li>
       </ol>
     </section>
@@ -52,9 +55,9 @@ cd pj-console</code></pre>
       <h3>2- Estructura del proyecto</h3>
       <p>Dentro de la carpeta encontrarás:</p>
       <ul>
-        <li><code>Program.cs</code> → Archivo principal de ejecución</li>
-        <li><code>ProyectoConsolaPOO.csproj</code> → Configuración del proyecto</li>
-        <li><code>obj/</code> → Archivos temporales de compilación</li>
+        <li><code class="text-primary">Program.cs</code> → Archivo principal de ejecución</li>
+        <li><code class="text-primary">ProyectoConsolaPOO.csproj</code> → Configuración del proyecto</li>
+        <li><code class="text-primary">obj/</code> → Archivos temporales de compilación</li>
       </ul>
     </section>
 
@@ -62,38 +65,41 @@ cd pj-console</code></pre>
     <section class="mb-5">
       <h3>3- Ejecutar el proyecto</h3>
       <p>Para compilar y ejecutar desde la terminal:</p>
-      <pre><code class="language-bash">dotnet run</code></pre>
-      <blockquote>Cada vez que hagas cambios en <code>Program.cs</code>, solo necesitas ejecutar <code>dotnet run</code> nuevamente.</blockquote>
-      <p>Ejemplo simple en <code>Program.cs</code>:</p>
-      <pre><code class="language-csharp">Console.WriteLine("Hola mundo");</code></pre>
+      <pre><code class="language-bash text-warning">dotnet run</code></pre>
+      <blockquote>Cada vez que hagas cambios en <code class="text-primary">Program.cs</code>, solo necesitas ejecutar
+        <code class="text-primary">dotnet run</code> nuevamente</blockquote>
+      <p>Ejemplo simple en <code class="text-primary">Program.cs</code>:</p>
+      <pre><code class="language-csharp text-warning">Console.WriteLine("Hola mundo");</code></pre>
     </section>
 
     <!-- Compilación avanzada -->
     <section class="mb-5">
       <h3>4- Compilación avanzada y limpieza</h3>
-      <p>Durante la compilación se crean las carpetas <code>bin</code> y <code>obj</code>.  
-      Si quieres limpiar y recompilar tu proyecto:</p>
-      <pre><code class="language-bash">dotnet clean
+      <p>Durante la compilación se crean las carpetas <code class="text-primary">bin</code> y <code
+          class="text-primary">obj</code>.
+        Si quieres limpiar y recompilar tu proyecto:</p>
+      <pre><code class="language-bash text-warning">dotnet clean
 dotnet build
 dotnet run</code></pre>
-      <blockquote>Esto asegura que todo se recompila desde cero y evita errores acumulados de compilación.</blockquote>
+      <blockquote>Esto asegura que todo se recompila desde cero y evita errores acumulados de compilación</blockquote>
     </section>
 
     <!-- Botón volver -->
     <div class="text-center">
-       <a href="../../index.html" class="btn btn-outline-light">Volver a Inicio</a>
+      <a href="../../index.html" class="btn btn-outline-light">Volver a Inicio</a>
     </div>
 
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-          crossorigin="anonymous"></script>
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-          crossorigin="anonymous"></script>
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-          crossorigin="anonymous"></script>
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
