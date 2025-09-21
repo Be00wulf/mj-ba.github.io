@@ -1,6 +1,7 @@
 body {
     width: 100vw;
-    height: 90vh;
+    /* height: 90vh; */
+    min-height: 100vh;
     color: #e0f2f1; /* texto en verde claro suave */
     background: linear-gradient(-45deg, #0d1b1e, #102a2c, #134e4a, #0b3d3b);
     background-size: 400% 400%;

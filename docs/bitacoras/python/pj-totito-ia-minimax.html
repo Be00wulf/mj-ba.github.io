@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Totito Minimax</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-light">
+    <div class="d-flex flex-column justify-content-center align-items-center min-vh-100"> 
+        <div class="container p-4 bg-dark rounded shadow-lg border border-light col-12 col-md-8 col-lg-6">
+
+            <div class="text-center mb-5">
+                <h1 class="fw-bold">Juego Totito: Algoritmos de búsqueda</h1>
+                <p class="lead">Usando <strong>Python</strong>
+            </div>
+
+        <section class="mb-5">
+            <h3>Descripción</h3>
+            <p>Proyecto de aplicacion de <strong>Alforitmos de Búsqueda</strong>en Pyton 3.13.7 usando Visual
+            Studio Code en Manjaro Linux</p>
+            <p>
+                USUARIO VS PC<br>
+                TABLA PERCEPCION - ACCION<br>
+	            Se deben conocer movimientos anteriores, la posicion del tiro del contrincante y debe haber una representacion del tablero 3x3<br><br>
+
+                Objetivo<br>
+                3 simbolos de un mismo jugador en linea vertical - horizontal - diagonal<br><br>
+
+                Función de evaluación (minimax)<br>
+                - Evaluar sitaucion actual del juego <br>
+                - Decidir mejor movimiento posible<br><br><br>
+            </p>
+
+            <p>
+                * COMENZANDO<br>
+                    para realizar la implementacion del algoritmo MINIMAX a codigo podemos partir de la siguiente pista <br>
+
+                    PISTA: esto se trata de un diagrama de arbol, y estos por lo general requieren de un algoritmo recursivo (una función que se llama a sí misma) <br><br>
+
+                    Lo que quiero es llamar a MINIMAX en determinada posición del tablero, probar y luego recorrer todos los movimientos posibles, y llamar a MINIMAX en cada una de estas posiciones del tablero, recorrer todos los movimientos posibles. <br><br>
+                    Si alguna vez se llega al objetivo, se devuelve el puntaje <br>
+                    Con este puntaje, debemos hacer que retroceda (o se propague) hacia arriba en la cadena <br> <br>
+
+                    [Una persona increíble me dio muchos tips, entre ellos está usar WARP TERMINAL y se me hace bastante importante mencionarlo, quisiera compartir esto aquí tambien ya que me ha resultado bastante útil nwn] <br>
+
+                    1. creamos repo en github [ej IA-Totito]<br>
+                    2. creamos archivo de proyecto [ej PJ IA PY]<br>
+                    3. git clone [agregar ssh del codigo del repo]<br>
+                    4. ls<br>
+                    5. cd IA-Totito/<br>
+                    6. verificamos si tenemos una version de python instalado<br>
+                            python3 --version<br><br>
+                            
+                            o instalarlo <br>
+                            sudo pacman -S python <br><br><br>
+            </p>
+            
+            <p>
+                * PARA TENER LAS DEPENDENCIAS SEPARADAS ES BUENA PRACTICA USAR ENTORNOS VIRTUALES PARA LOS PROYECTOS  <br>
+                    (Una librería es un producto (código listo para usar) y Una dependencia es una relación: tu programa "depende" de la librería para funcionar)  (Un entorno en Python es un contexto aislado y autocontenido que incluye un intérprete de Python específico, sus bibliotecas y los paquetes de terceros que necesita un proyecto particular. Su principal utilidad es evitar conflictos de dependencias entre proyectos, permitiendo que cada uno tenga su propio conjunto de bibliotecas con versiones específicas sin afectar la instalación global de Python o a otros proyectos. Se crean para gestionar las dependencias de forma limpia y organizada, haciendo que los proyectos sean más portátiles y reproducibles)  <br>
+                        Entonces dentro de la carpeta del proyecto creamos este entorno, escribiré en la terminal lo siguiente:<br>
+                            python3 -m venv venv<br><br>
+
+                        Luego hay que activar dicho entorno virtual asi:<br>
+                            source venv/bin/activate<br><br>
+
+                        Y ya al terminar de trabajar con el proyecto se puede salir con el comando:<br>
+                            deactivate   <br>
+                        
+                        DESACTIVAR EL ENTORNO VIRTUAL ayuda a mantener el sistema organizado y asegura que cualquier librería que se instale en el futuro no se mezcle con las de este proyecto
+                            
+                            <br><br><br>
+            </p>
+
+            <p>
+                * PARA ESTE PROYECTO DE TOTITO SE ESTARÁN UTILIZANDO LAS LIBRERÍAS <br>
+                    pygame [esto nos permitirá crear ventanas, dibujar formas, imágenes, manejar eventos de teclado o mouse, reproducir sonidos...]<br>
+                    
+                    numpy [esto nos permitirá hacer procesamientos numéricos, manejar matrices/arreglos eficientemente, hacer rápidas operaciones matemáticas...]<br>
+
+                    pygame usa numpy para algunos efectos de pixeles y transformaciones de imagenes.<br><br>
+
+                    OK luego de esa breve explicación procedemos a instalarlos DENTRO de nuestro entorno virtual
+                        nos aseguramos de tener el entorno virtual activado (si lo llamamos venv) con: <br>
+                        cd IA-Totito<br>
+                        source venv/bin/activate<br><br>
+
+                    Nos debemos asegurar de que pip este actualizado en este entorno<br>
+                        pip install --upgrade pip<br><br>
+
+                    Luego instalamos numpy<br>
+                        pip install numpy<br><br>
+
+                    Después ya instalamos pygame (aunque puede que se requiera instalar otros paquetes del sistema que son dependencias de SDL (Simple DirectMedia Layer, una biblioteca de bajo nivel escrita en C que proporciona acceso a hardware de multimedia como audio, teclado, ratón y gráficos, permitiendo crear aplicaciones multiplataforma. ) y otros componentes gráficos. Para Manjaro las dependencias tipicas son sdl2, sdl2_image, sdl2_mixer, sdl2_ttf...) así con pacman:<br>
+                        sudo pacman -Syu<br>
+                        sudo pacman -S sdl2 sdl2_image sdl2_mixer sdl2_ttf<br><br>
+
+                    Y ya con eso se puede proceder a instalar pygame con pip<br>
+                        pip install pygame<br><br><br>
+
+            </p>
+
+            <p>
+                * PARA ABRIR EN EL EDITOR<br>
+                    En mi caso estare usando VScode, para abirlo desde la terminal podemos usar el comando:<br>
+                        code .<br><br><br>
+
+                    
+            </p>
+
+            <p>
+                * para gestionar dependencias en proyectos de Python <br>
+                se debe crear el archivo requirements.txt de la siguiente manera<br>
+                1. asegurarnos de estar en la direccion del proyecto<br>
+                2. abrir la terminal ahí<br>
+                3. activar el entorno virtual con el comando [source venv/bin/activate]<br>
+                4. ejecutar el comando para generar el archivo requirements.txt con el comando [pip freeze > requirements.txt] 
+                    [el signo > redirige la salida del comando pip freeze [que lista todas las librerías] a un nuevo archivo llamado requirements.txt] <br>
+                5. desactivar el entorno virtual al terminar con el comando [deactivate]<br><br><br>
+
+                
+            </p>
+
+            <p>
+                *PARA PROBAR EL CODIGO <br> 
+                cuando alguien clone tu repositorio (que ya contiene el archivo requirements.txt), 
+                el proceso para que la aplicación funcione es muy sencillo y estandarizado:<br>
+
+                clonar el repositorio: el usuario descarga tu código desde el repositorio de Git<br>
+                git clone https://github.com/...<br><br>
+
+                crear un entorno virtual: el usuario crea su propio entorno virtual para evitar 
+                conflictos con otras librerías de su sistema<br>
+                python3 -m venv venv<br><br>
+
+                activar el entorno virtual: el usuario activa el entorno<br>
+                source venv/bin/activate <br><br>
+
+                instalar las dependencias: el usuario utiliza el archivo requirements.txt para que pip instale todas 
+                las librerías necesarias con las versiones correctas<br>
+                pip install -r requirements.txt<br><br>
+
+                una vez que este proceso está completo, el usuario tiene un entorno de trabajo idéntico al que hayas creado, 
+                con todas las librerías necesarias (como pygame y numpy) instaladas y listas para ejecutar tu código. 
+                Esto asegura que el proyecto funcione de la misma manera para todos
+                <br><br>
+                [seguire documentando esta sección, de momento dejaré el enlace al repositorio acá abajo xD]
+
+            </p>
+
+        </section>      
+
+        <section class="mb-5">
+            <h3>Puedes ver el proyecto en mi repositorio: </h3>
+            <a href="https://github.com/Be00wulf/IA-Totito" class="text-warning border-light" >Juego Totito IA Minimax</a>
+        </section>
+
+        <div class="text-center">
+            <a href="../../index.html" class="btn btn-outline-light">Volver a Inicio</a>
+        </div>
+
+        </div>
+    </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
