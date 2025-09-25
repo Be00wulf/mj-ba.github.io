@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Totito Minimax</title>
+  <title>Usando Python</title>
   <link rel="stylesheet" href="../../assets/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -14,54 +14,40 @@
         <div class="container p-4 bg-dark rounded shadow-lg border border-light col-12 col-md-8 col-lg-6">
 
             <div class="text-center mb-5">
-                <h1 class="fw-bold">Juego Totito: Algoritmos de búsqueda</h1>
+                <h1 class="fw-bold">Preparando entorno y dependencias </h1>
                 <p class="lead">Usando <strong>Python</strong>
             </div>
 
         <section class="mb-5">
             <h3>Descripción</h3>
-            <p>Proyecto de aplicacion de <strong>Alforitmos de Búsqueda</strong>en Pyton 3.13.7 usando Visual
+            <p>Proyecto de aplicacion en Pyton 3.13.7 usando Visual
             Studio Code en Manjaro Linux</p>
-            <p>
-                USUARIO VS PC<br>
-                TABLA PERCEPCION - ACCION<br>
-	            Se deben conocer movimientos anteriores, la posicion del tiro del contrincante y debe haber una representacion del tablero 3x3<br><br>
-
-                Objetivo<br>
-                3 simbolos de un mismo jugador en linea vertical - horizontal - diagonal<br><br>
-
-                Función de evaluación (minimax)<br>
-                - Evaluar sitaucion actual del juego <br>
-                - Decidir mejor movimiento posible<br><br><br>
-            </p>
 
             <p>
                 * COMENZANDO<br>
-                    para realizar la implementacion del algoritmo MINIMAX a codigo podemos partir de la siguiente pista <br>
-
-                    PISTA: esto se trata de un diagrama de arbol, y estos por lo general requieren de un algoritmo recursivo (una función que se llama a sí misma) <br><br>
-
-                    Lo que quiero es llamar a MINIMAX en determinada posición del tablero, probar y luego recorrer todos los movimientos posibles, y llamar a MINIMAX en cada una de estas posiciones del tablero, recorrer todos los movimientos posibles. <br><br>
-                    Si alguna vez se llega al objetivo, se devuelve el puntaje <br>
-                    Con este puntaje, debemos hacer que retroceda (o se propague) hacia arriba en la cadena <br> <br>
-
                     [Una persona increíble me dio muchos tips, entre ellos está usar WARP TERMINAL y se me hace bastante importante mencionarlo, quisiera compartir esto aquí tambien ya que me ha resultado bastante útil nwn] <br>
 
-                    1. creamos repo en github [ej IA-Totito]<br>
-                    2. creamos archivo de proyecto [ej PJ IA PY]<br>
+                    1. creamos repo en github [ej IA]<br>
+                    2. creamos archivo de proyecto [ej PJ PY]<br>
                     3. git clone [agregar ssh del codigo del repo]<br>
                     4. ls<br>
-                    5. cd IA-Totito/<br>
-                    6. verificamos si tenemos una version de python instalado<br>
+                    5. cd IA/<br>
+                    6. verificamos si tenemos una version de python instalada<br>
                             python3 --version<br><br>
                             
-                            o instalarlo <br>
+                            o instalarla <br>
                             sudo pacman -S python <br><br><br>
             </p>
             
             <p>
                 * PARA TENER LAS DEPENDENCIAS SEPARADAS ES BUENA PRACTICA USAR ENTORNOS VIRTUALES PARA LOS PROYECTOS  <br>
-                    (Una librería es un producto (código listo para usar) y Una dependencia es una relación: tu programa "depende" de la librería para funcionar)  (Un entorno en Python es un contexto aislado y autocontenido que incluye un intérprete de Python específico, sus bibliotecas y los paquetes de terceros que necesita un proyecto particular. Su principal utilidad es evitar conflictos de dependencias entre proyectos, permitiendo que cada uno tenga su propio conjunto de bibliotecas con versiones específicas sin afectar la instalación global de Python o a otros proyectos. Se crean para gestionar las dependencias de forma limpia y organizada, haciendo que los proyectos sean más portátiles y reproducibles)  <br>
+                    (Una librería es un producto (código listo para usar) y Una dependencia es una relación: tu programa "depende" de la 
+                    librería para funcionar)  (Un entorno en Python es un contexto aislado y autocontenido que incluye un intérprete de 
+                    Python específico, sus bibliotecas y los paquetes de terceros que necesita un proyecto particular. Su principal 
+                    utilidad es evitar conflictos de dependencias entre proyectos, permitiendo que cada uno tenga su propio conjunto de 
+                    bibliotecas con versiones específicas sin afectar la instalación global de Python o a otros proyectos. Se crean 
+                    para gestionar las dependencias de forma limpia y organizada, haciendo que los proyectos sean más portátiles y 
+                    reproducibles)  <br>
                         Entonces dentro de la carpeta del proyecto creamos este entorno, escribiré en la terminal lo siguiente:<br>
                             python3 -m venv venv<br><br>
 
@@ -71,13 +57,14 @@
                         Y ya al terminar de trabajar con el proyecto se puede salir con el comando:<br>
                             deactivate   <br>
                         
-                        DESACTIVAR EL ENTORNO VIRTUAL ayuda a mantener el sistema organizado y asegura que cualquier librería que se instale en el futuro no se mezcle con las de este proyecto
+                        DESACTIVAR EL ENTORNO VIRTUAL ayuda a mantener el sistema organizado y asegura que cualquier librería que se 
+                        instale en el futuro no se mezcle con las de este proyecto
                             
                             <br><br><br>
             </p>
 
             <p>
-                * PARA ESTE PROYECTO DE TOTITO SE ESTARÁN UTILIZANDO LAS LIBRERÍAS <br>
+                * PARA UN PROYECTO SE SE PUEDEN UTILIZAR LIBRERÍAS DENTRO DE ENTORNOS VIRTUALES, COMO POR EJEMPLO <br>
                     pygame [esto nos permitirá crear ventanas, dibujar formas, imágenes, manejar eventos de teclado o mouse, reproducir sonidos...]<br>
                     
                     numpy [esto nos permitirá hacer procesamientos numéricos, manejar matrices/arreglos eficientemente, hacer rápidas operaciones matemáticas...]<br>
@@ -86,7 +73,7 @@
 
                     OK luego de esa breve explicación procedemos a instalarlos DENTRO de nuestro entorno virtual
                         nos aseguramos de tener el entorno virtual activado (si lo llamamos venv) con: <br>
-                        cd IA-Totito<br>
+                        cd IA<br>
                         source venv/bin/activate<br><br>
 
                     Nos debemos asegurar de que pip este actualizado en este entorno<br>
@@ -95,7 +82,11 @@
                     Luego instalamos numpy<br>
                         pip install numpy<br><br>
 
-                    Después ya instalamos pygame (aunque puede que se requiera instalar otros paquetes del sistema que son dependencias de SDL (Simple DirectMedia Layer, una biblioteca de bajo nivel escrita en C que proporciona acceso a hardware de multimedia como audio, teclado, ratón y gráficos, permitiendo crear aplicaciones multiplataforma. ) y otros componentes gráficos. Para Manjaro las dependencias tipicas son sdl2, sdl2_image, sdl2_mixer, sdl2_ttf...) así con pacman:<br>
+                    Después ya instalamos pygame (aunque puede que se requiera instalar otros paquetes del sistema que son 
+                    dependencias de SDL (Simple DirectMedia Layer, una biblioteca de bajo nivel escrita en C que proporciona 
+                    acceso a hardware de multimedia como audio, teclado, ratón y gráficos, permitiendo crear aplicaciones 
+                    multiplataforma. ) y otros componentes gráficos. Para Manjaro las dependencias tipicas son sdl2, sdl2_image, s
+                    dl2_mixer, sdl2_ttf...) así con pacman:<br>
                         sudo pacman -Syu<br>
                         sudo pacman -S sdl2 sdl2_image sdl2_mixer sdl2_ttf<br><br>
 
@@ -155,16 +146,16 @@
         </section>      
 
         <section class="mb-5">
+            <h3>Repositorios </h3>
+            <a href="https://github.com/Be00wulf/IA-Totito" class="text-warning border-light" >Juego IA</a>
+        </section>
+
+        <section class="mb-5">
             <h3>Referencias</h3>
             <a href="https://www.youtube.com/watch?v=trKjYdBASyQ&list=LL&index=11&t=635s" class="text-warning border-light" >Minimax Algorithm for Tic Tac Toe</a> |
             <a href="https://www.youtube.com/watch?v=Xly7lpTQELI&list=LL&index=2" class="text-warning border-light">Minimax Algorithm Explained</a> |
             <a href="https://www.youtube.com/watch?v=LbTu0rwikwg&list=LL&index=3" class="text-warning border-light">Unbeatable Minimax AI</a> |
 
-        </section>
-
-        <section class="mb-5">
-            <h3>Puedes ver el proyecto en mi repositorio: </h3>
-            <a href="https://github.com/Be00wulf/IA-Totito" class="text-warning border-light" >Juego Totito IA Minimax</a>
         </section>
 
         <div class="text-center">
