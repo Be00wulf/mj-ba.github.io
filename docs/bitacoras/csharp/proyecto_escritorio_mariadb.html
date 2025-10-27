@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentación - PrinTicket</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-light">
+  <div class="d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <div class="container p-4 bg-dark rounded shadow-lg border border-light col-12 col-md-10 col-lg-8">
+
+      <div class="text-center mb-5">
+        <h1 class="fw-bold">Proyecto de Escritorio: PrinTicket</h1>
+        <p class="lead">Aplicación de gestión de eventos y tickets usando <strong>C# .NET 9</strong>, <strong>Avalonia UI</strong> y <strong>MariaDB</strong> en Manjaro Linux.</p>
+      </div>
+
+      <section class="mb-5">
+        <h3>MariaDB</h3>
+        <p>Una buena alternativa para Linux de MySQL es <strong>MariaDB</strong>.</p>
+
+        <h5>Instalación en Manjaro:</h5>
+        <pre><code class="language-bash text-warning">
+sudo pacman -S mariadb-clients
+# Introduce tu contraseña
+# Proceed with installation? -> Y
+        </code></pre>
+
+        <p>Luego es de gran utilidad instalar un cliente gráfico para trabajar con la base de datos. Podemos usar <strong>DBeaver</strong>:</p>
+        <ul>
+          <li>Multiplataforma, compatible con MariaDB, MySQL, PostgreSQL, SQL Server, SQLite, Oracle, MongoDB, Cassandra.</li>
+          <li>Permite modelar esquemas ER.</li>
+          <li>Requiere JDK completo para ciertas funciones.</li>
+        </ul>
+
+        <pre><code class="language-bash text-warning">
+sudo pacman -S jdk21-openjdk
+java -version
+javac -version
+
+sudo pacman -S dbeaver
+# Alternativa Workbench
+flatpak install flathub re.sonny.Workbench -y
+        </code></pre>
+
+        <h5>Instalación de MariaDB:</h5>
+        <pre><code class="language-bash text-warning">
+sudo pacman -S mariadb
+sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+sudo systemctl start mariadb
+sudo systemctl status mariadb
+sudo systemctl enable mariadb
+sudo mysql_secure_installation
+        </code></pre>
+      </section>
+
+      <section class="mb-5">
+        <h3>Preparar entorno para Avalonia UI</h3>
+        <ul>
+          <li>Avalonia UI es un framework GUI para C# y .NET, multiplataforma.</li>
+          <li>Se inspira en WPF de Windows para permitir MVVM en Linux, Windows y macOS.</li>
+          <li>MVVM = Model-View-ViewModel: organiza tu código en capas:
+            <ul>
+              <li>Model → datos y lógica</li>
+              <li>View → interfaz</li>
+              <li>ViewModel → conecta datos con la vista</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>Con Avalonia UI se pueden crear:</p>
+        <ul>
+          <li>Aplicaciones de escritorio con ventanas y botones</li>
+          <li>Aplicaciones administrativas o de gestión</li>
+          <li>Apps con conexión a bases de datos</li>
+          <li>Interfaces con diseño moderno y temas oscuros</li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <h3>Preparación en Manjaro para .NET 9 y Avalonia</h3>
+        <pre><code class="language-bash text-warning">
+dotnet --version
+sudo pacman -S dotnet-sdk
+sudo pacman -S aspnet-runtime
+dotnet new install Avalonia.Templates
+        </code></pre>
+
+        <p>Tipos de proyecto Avalonia disponibles:</p>
+        <ul>
+          <li>avalonia.app → aplicación de escritorio simple</li>
+          <li>avalonia.mvvm → estructura MVVM</li>
+          <li>avalonia.xplat → proyecto multiplataforma</li>
+          <li>avalonia.reactiveui → con ReactiveUI</li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <h3>Primeros pasos con Avalonia</h3>
+        <p>1 - Proyecto simple:</p>
+        <pre><code class="language-bash text-warning">
+dotnet new avalonia.app -n MyFirstAvaloniaApp
+cd MyFirstAvaloniaApp
+code .
+dotnet run
+# Muestra ventana con "Welcome to Avalonia"
+        </code></pre>
+
+        <p>2 - Proyecto con estructura MVVM:</p>
+        <pre><code class="language-bash text-warning">
+dotnet new avalonia.mvvm -n PrinTicket
+cd PrinTicket
+code .
+dotnet run
+# Muestra ventana principal con "Welcome to Avalonia"
+        </code></pre>
+      </section>
+
+      <section class="mb-5">
+        <h3>Extensiones útiles en VS Code</h3>
+        <ul>
+          <li><strong>Avalonia for VSCode</strong>: resaltado de sintaxis, autocompletado, preview en vivo.</li>
+          <li>Dotnet add package Pomelo.EntityFrameworkCore.MySql → para usar Entity Framework Core con MariaDB.</li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <h3>Dependencias de proyecto</h3>
+        <pre><code class="language-bash text-warning">
+dotnet add package ReactiveUI
+dotnet add package ReactiveUI.Fody
+dotnet add package System.Reactive
+dotnet restore
+dotnet build
+dotnet run
+        </code></pre>
+
+        <p>Esto agrega soporte para MVVM reactivo y notificación de propiedades.</p>
+      </section>
+
+      <section class="mb-5">
+        <h3>Primeros pasos con Login</h3>
+        <ul>
+          <li>Crear LoginView.axaml y LoginViewModel.cs</li>
+          <li>Mostrar el login en MainWindow.axaml</li>
+          <li>Cambiar DataContext en MainWindow.axaml.cs</li>
+          <li>Ejecutar con <code>dotnet run</code></li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <h3>Conexión a base de datos (MariaDB)</h3>
+        <ul>
+          <li>Capas: UI (Avalonia) / Lógica (ViewModel) / Base de datos (MariaDB)</li>
+          <li>Flujo:
+            <ol>
+              <li>Usuario escribe nombre y contraseña</li>
+              <li>ViewModel llama al servicio de datos</li>
+              <li>Consulta en MariaDB si el usuario existe</li>
+              <li>Si los datos son correctos, se abre otra ventana</li>
+            </ol>
+          </li>
+        </ul>
+
+        <p>Instalar conector de MariaDB:</p>
+        <pre><code class="language-bash text-warning">
+dotnet add package MySqlConnector
+        </code></pre>
+      </section>
+
+      <section class="mb-5">
+        <h3>Preparación de la base de datos</h3>
+        <p>Crea la base de datos y la tabla de usuarios, luego podrás crear eventos y tickets.</p>
+      </section>
+
+      <div class="text-center">
+        <a href="../../index.html" class="btn btn-outline-light">Volver a Inicio</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
