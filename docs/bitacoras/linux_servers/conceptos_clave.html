@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servidores Linux</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-light">
+    <div class="d-flex flex-column justify-content-center align-items-center min-vh-100"> 
+        <div class="container p-4 bg-dark rounded shadow-lg border border-light col-12 col-md-8 col-lg-6">
+
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Conceptos clave </h1>
+            <p class="lead">Servidores <strong>Linux </strong> y <strong>virtualización</strong></p>
+        </div>
+
+        <section class="mb-5">
+            <h3>Descripción</h3>
+            <p>Comencemos con <strong>un pequeño repaso de </strong> palabras clave :D</p>
+            <ul>
+                <li>
+                    Virtualización: Tecnología que permite ejecutar sistemas operativos completos 
+                    dentro de una máquina virtual
+                </li>
+                
+                <li>
+                    VirtualBox: Software de virtualización que permite crear y administrar máquinas virtuales
+                </li>
+
+                <li>
+                    VM (Máquina Virtual): Sistema operativo completo ejecutándose dentro de un entorno virtual aislado
+                </li>
+
+                <li>
+                    ISO: Imagen de instalación que contiene los archivos necesarios para instalar un sistema operativo
+                </li>
+
+                <li>
+                    Ubuntu Server: Distribución de Ubuntu enfocada en servicios y servidores, sin entorno gráfico
+                </li>
+
+                <li>
+                    Kernel: Núcleo del sistema operativo que gestiona hardware, memoria y procesos
+                </li>
+
+                <li>
+                    NAT (Network Address Translation): Modo de red que da internet a la VM usando la conexión del host
+                </li>
+
+                <li>
+                    Adaptador puente (Bridged Adapter): Modo de red que conecta la VM como un dispositivo independiente en tu red local
+                </li>
+
+                <li>
+                    DHCP: Sistema que asigna automáticamente direcciones IP a los dispositivos
+                </li>
+
+                <li>
+                    SSH: Protocolo que permite administrar servidores de forma remota mediante terminal segura
+                </li>
+
+                <li>
+                    Paquete (Package): Conjunto de archivos y aplicaciones instalables en un sistema Linux
+                </li>
+
+                <li>
+                    APT: Gestor de paquetes de Debian/Ubuntu que permite instalar, actualizar o eliminar software
+                </li>
+
+                <li>
+                    Root: Usuario administrador con permisos completos sobre el sistema
+                </li>
+
+                <li>
+                    Hostname: Nombre único que identifica a un servidor dentro de una red
+                </li>
+
+                <li>
+                    Partitioning (Particionamiento): Proceso donde se divide un disco duro en áreas separadas para organizar datos
+                </li>
+
+                <li>
+                    CLI (Command Line Interface): Interfaz basada en comandos utilizada para administrar Ubuntu Server
+                </li>
+
+                <li>
+                    UFW: Firewall sencillo de Ubuntu para controlar puertos y reglas de red
+                </li>
+
+                <li>
+                    CPU Cores: Cantidad de núcleos del procesador asignados a la máquina virtual
+                </li>
+
+                <li>
+                    RAM: Memoria asignada a la máquina virtual para ejecutar aplicaciones y procesos
+                </li>
+
+                <li>
+                    Snapshots: Puntos de restauración de una máquina virtual para volver atrás si algo falla
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Conceptos</h3>
+            <p>
+                ¿Y esto para qué me va a servir?
+                Bueno banda, Linux domina los servidores del mundo.
+                Más del 90% de los servidores en la nube (AWS, Azure, GCP, Oracle Cloud) corren Linux.
+                Más del 80% del internet funciona sobre servidores Linux (Apache, Nginx).
+                Todas las supercomputadoras del mundo usan Linux.
+                <br>
+                Cierto que tambien es estable, seguro y eficiente.
+                Diseñado para multiusuario.
+                Prácticamente sin virus.
+                Ideal para entornos críticos (finanzas, telecomunicaciones, industria).
+                <br>
+                Oigan y es base para rutas de DevOps, Cloud y Contenedores
+                Tecnologías modernas dependen de Linux:
+                Docker
+                Kubernetes
+                CI/CD (GitHub Actions, GitLab CI, Jenkins)
+                Infraestructura como código (Terraform, Ansible)
+                <br>
+                Oye y te convierte en un ingeniero mucho más completo
+                Saber Linux aumenta tu valor profesional porque puedes:
+                Administrar servidores
+                Desplegar aplicaciones web
+                Configurar redes
+                Optimizar rendimiento
+                Resolver problemas reales
+                <br>
+                Por cierto, tambien es totalmente libre y abierto
+                Puedes estudiar, modificar, distribuir y colaborar sin restricciones.
+            </p>
+
+            
+        </section>
+
+        <section>
+            <h4>¿Pero qué es un servidor?</h4>
+            <p>
+                Un servidor es una computadora (física o virtual) diseñada para proveer servicios a otros equipos llamados clientes.
+                Ejemplos de servicios: web, archivos, bases de datos, correo, autenticación, etc...</p>
+
+            <h4>La evolución de los servidores</h4>
+            <p>
+                Con el tiempo, los servidores evolucionaron desde enormes máquinas físicas dedicadas exclusivamente a 
+                una tarea —como alojar sitios web o bases de datos— hasta convertirse en sistemas virtualizados que 
+                pueden ejecutar múltiples servicios en la misma máquina. Antes, un servidor ocupaba espacio en un cuarto 
+                frío con cables y racks; hoy, en una sola máquina física pueden existir decenas o cientos de servidores 
+                virtuales.
+            </p> 
+
+            <h4>Servidores en la actualidad</h4>
+            <p>
+                En la actualidad los servidores funcionan mayormente en la nube, distribuidos en centros de datos 
+                alrededor del mundo. Ya no necesitas tenerlos físicamente: se alquila capacidad de cómputo y 
+                almacenamiento, y todo se gestiona a través de Linux, virtualización, contenedores y orquestadores 
+                como Kubernetes. Estos servidores modernos son escalables, automatizados y pueden crecer o reducir su 
+                capacidad según la demanda.
+            </p>
+
+            <h4>Servidores comunes</h4>
+            <p>
+                Entre los servidores más comunes hoy en día se encuentran aquellos dedicados a servir páginas web, 
+                administrar bases de datos, manejar archivos, permitir conexiones remotas y operar contenedores o 
+                aplicaciones distribuidas. Aunque existen muchas herramientas, los tipos más usados suelen ser servidores 
+                web como Apache o Nginx, servidores de bases de datos como MySQL o PostgreSQL, y servidores de 
+                aplicaciones que ejecutan software empresarial o servicios de backend.
+            </p>
+
+            <h4>Unix</h4>
+            <p>
+                Un sistema operativo Unix nació como una forma elegante y minimalista de controlar computadoras en los 
+                años setenta. Su filosofía se basaba en hacer pocas cosas, pero hacerlas bien, y permitir que 
+                herramientas pequeñas se conectaran entre sí como piezas de un rompecabezas. Con el tiempo, Unix se 
+                convirtió en el padre espiritual de casi todos los sistemas modernos, influyendo desde macOS hasta 
+                Solaris y muchos sistemas empresariales que aún viven en grandes centros de datos.
+            </p>
+
+            <h4>Linux</h4>
+            <p>
+                Linux, por su lado, surgió como un clon libre de Unix creado por Linus Torvalds en 1991. Lo interesante 
+                es que Linux, por sí solo, es únicamente el núcleo: el “motor” que conecta el software con el hardware. 
+                Sin embargo, no era suficiente para un sistema funcional. Entonces apareció GNU, un proyecto previo que 
+                llevaba años creando las herramientas necesarias para reemplazar cada parte de Unix. Cuando el kernel 
+                Linux se unió con las utilidades GNU, nació lo que realmente usamos hoy: GNU/Linux, un sistema operativo 
+                completo y totalmente libre. La diferencia entre Linux y GNU/Linux es sencilla: Linux es el corazón; 
+                GNU/Linux es el cuerpo entero con músculos, huesos y órganos funcionando en armonía.
+            </p>
+
+            <h4>Estructura y arquitectura</h4>
+            <p>
+                La arquitectura de un sistema Unix o Linux puede verse como una ciudad organizada en capas. En el fondo 
+                está el hardware, silencioso y rígido, esperando instrucciones. Encima vive el kernel, que actúa como un 
+                puente inteligente que decide cómo se usan la memoria, los procesos, la red y los dispositivos. Luego 
+                llega el shell, una especie de intérprete que traduce lo que el usuario pide en instrucciones que el 
+                sistema entiende. Finalmente, en la superficie, están las utilities: cientos de pequeñas herramientas 
+                que realizan tareas concretas y que pueden combinarse para resolver problemas complejos. Una curiosidad 
+                interesante es que esta arquitectura permanece sorprendentemente similar desde hace más de cuarenta años, 
+                una prueba de su solidez.
+            </p>
+
+            <h4>Open Source/Free Software</h4>
+            <p>
+                El movimiento del software libre nació antes que Linux, impulsado por Richard Stallman, con un énfasis 
+                fuerte en la libertad del usuario más que en la simplemente disponibilidad del código. Buscaba garantizar
+                 cuatro libertades esenciales: poder estudiar cómo funciona el software, poder modificarlo, poder 
+                 distribuir copias y poder compartir versiones mejoradas con otros. El open source llegó después 
+                 con una postura más pragmática: quería convencer a la industria de que el código abierto era útil, 
+                 seguro y económicamente viable, sin tanta carga filosófica. Aunque ambos comparten principios, el 
+                 primero se enfoca en la libertad como derecho y el segundo en la colaboración como ventaja estratégica.
+            </p>
+
+            <h4>Distribuciones Linux</h4>
+            <p>
+                Una distribución de Linux es, en esencia, una mezcla ya preparada de kernel, utilidades GNU, programas 
+                adicionales, configuraciones y un gestor de paquetes. Es como recibir una caja de herramientas 
+                completamente organizada en lugar de tener que armarla pieza por pieza. Cada distribución tiene 
+                personalidad propia: unas son estables, otras experimentales, algunas educativas, otras minimalistas. 
+                De ahí surge también el concepto de soporte a largo plazo, o LTS, una promesa de mantener un sistema 
+                con actualizaciones de seguridad durante años para los entornos que necesitan fiabilidad antes que 
+                novedades.
+            </p>
+
+            <h4>Non Free Repositories</h4>
+            <p>
+                En algunas distribuciones existen repositorios “non-free”, que son colecciones de software que no cumple 
+                con las libertades del software libre. Suelen incluir drivers, firmware o aplicaciones propietarias 
+                necesarias para que ciertas computadoras funcionen correctamente. Aunque el espíritu de Linux es la 
+                libertad, la realidad del hardware obliga a convivir con estas piezas cerradas para la comodidad del 
+                usuario.
+            </p>
+
+            <h4>Rolling in release / Fixed release</h4>
+            <p>
+                Entre las distribuciones, existen dos modelos de actualización: las rolling release y las fixed release. 
+                Las rolling release se comportan como un río que nunca deja de fluir; siempre estás usando versiones 
+                recientes del kernel, los paquetes y las herramientas. En cambio, las fixed release son como estaciones 
+                de tren: el sistema se congela en una versión estable y solo recibe seguridad y correcciones menores. 
+                Elegir entre uno y otro depende de qué busques: novedad constante o estabilidad a largo plazo.
+            </p>
+
+            <h4>Pero ¿qué sistema operativo debería elegir?</h4>
+            <p>
+                Elegir un sistema operativo depende de tu propósito. Para aprender, casi cualquier distribución sirve. 
+                Para servidores donde importa la estabilidad, suelen preferirse las fixed release. Para desarrolladores 
+                curiosos que quieren lo último y están dispuestos a resolver problemas ocasionales, las rolling son una 
+                aventura perfecta. Más que cuál elegir, lo importante es comprender su naturaleza.
+            </p>
+
+            <h4>Entornos ON-PREMISE</h4>
+            <p>
+                Un entorno on-premise es aquel donde la infraestructura vive físicamente dentro de las instalaciones de 
+                una empresa. Ahí mismo están los servidores, el cableado, los sistemas de enfriamiento y los equipos 
+                responsables de su mantenimiento. Es control total, pero también responsabilidad total. Una nube pública 
+                funciona como alquilar espacio en un gigantesco centro de datos administrado por otro: AWS, Azure o 
+                Google Cloud gestionan todo el hardware y tú solo pagas por utilizarlo. La nube privada es similar, 
+                pero construida exclusivamente para una empresa que quiere la flexibilidad de la nube con el aislamiento 
+                y el control de una infraestructura propia. El entorno híbrido es un puente entre ambos mundos, 
+                combinando recursos locales y recursos en la nube para aprovechar lo mejor de cada uno.
+            </p>
+
+            <h4>Data Centers</h4>
+            <p>
+                Un centro de datos es el hogar físico de Internet: enormes salas llenas de servidores, cableado 
+                estructurado, sistemas de enfriamiento y seguridad extrema. Allí viven millones de sitios web, 
+                aplicaciones y servicios que usamos a diario sin siquiera pensarlo. Un dato curioso es que algunos 
+                centros de datos modernos reutilizan el calor de los servidores para calentar barrios completos en países 
+                nórdicos, convirtiendo el tráfico digital en energía útil para la vida diaria.
+            </p>
+        </section>
+
+        <section>
+            <h3>Perfiles de GitHub de referentes del mundo Linux ;D</h3>
+            <a href="https://github.com/torvalds">👤 Linus Torvalds</a>
+            <a href="https://github.com/systemd">👤 systemd </a>
+            <a href="https://github.com/canonical">👤 Canonical</a>
+            <a href="https://github.com/docker">👤 Docker</a>
+            <a href="https://github.com/kubernetes">👤 Kubernetes</a>
+            <a href="https://github.com/ansible">👤 Ansible</a>
+            <a href="https://github.com/hashicorp">👤 HashiCorp</a>
+
+            <h3>YouTube en Español</h3>
+            <a href="https://www.youtube.com/@pildorasinformaticas">▶️pildorasinformaticas</a>
+            <a href="https://www.youtube.com/@CarlosAzaustre">▶️ Carlos Azaustre - Aprende JavaScript</a>
+            <a href="https://www.youtube.com/@FaztTech">▶️ Fazt</a>
+            <a href="https://www.youtube.com/@EduardoColladoCabeza">▶️ Eduardo Collado</a>
+            <a href="https://www.youtube.com/@ProgramadorX">▶️ Programador X</a>
+            <a href="https://www.youtube.com/@eliezer.deleon">▶️ Eliezer De León</a>
+
+            <h3>YouTube en Inglés</h3>
+            <a href="https://www.youtube.com/@Doriandotslash">▶️ DorianDotSlash</a>
+            <a href="https://www.youtube.com/@NetworkChuck">▶️ NetworkChuck</a>
+            <a href="https://www.youtube.com/@LinuxfoundationOrg">▶️ The Linux Foundation</a>
+            <a href="https://www.youtube.com/@LearnLinuxTV">▶️ Learn Linux TV</a>
+            <a href="https://www.youtube.com/@ChrisTitusTech">▶️ Chris Titus Tech</a>
+            <a href="https://www.youtube.com/@JeffGeerling">▶️ Jeff Geerling</a>
+        </section>
+
+      <div class="text-center">
+        <a href="../../index.html" class="btn btn-outline-light">Volver a Inicio</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+
+</html>
