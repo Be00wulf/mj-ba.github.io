@@ -1,0 +1,70 @@
+    body{
+        background-color: rgb(27, 27, 27);
+        font-size: large;
+        font-family: Arial, Helvetica, sans-serif;
+        color: antiquewhite;
+
+    }
+
+    h1{
+        color: rgb(224, 224, 69);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .h1{
+        color: red;
+    }
+
+    h2{
+        color: darkgoldenrod;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    /* segun importancia, si lo llega a hacer, pero no se ve */
+    /* PRECEDENCIA */
+    #tituloid {
+        color: #5a7267;
+    }
+    
+    .titulo2 {
+        color: #54a57f;
+        font-size: 50px;
+    }
+
+    h3{
+        color: #72cfa4;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    p{
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(187, 197, 187);
+    }
+
+    footer{
+        background-color: rgb(39, 39, 38);
+    }
+
+    article{
+        background-color: rgb(43, 33, 33);
+        border-color: aliceblue;
+        border-style: dotted;
+        padding: 8px;
+    }
+
+    section{
+        background-color: d=rgb(46, 39, 39);
+        padding: 8px;
+        border-style: double;
+        border-color: rgb(107, 112, 111);
+    }
+
+    .btn{
+        background-color: #20215c;
+        padding: 6px;
+        border-radius: 2px;
+        border-style:dotted ;
+    }
+    
+    
+
