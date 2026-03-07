@@ -3,78 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recopilaciones</title>
+    <title>Recopilaciones | Estructura Avanzada</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../../assets/style.css">
-
 </head>
-<!-- <body style="margin: 5%; padding: 5%;"> <main> -->
 <body>
-        <header>
-            <h1>RECOPILACIONES</h1>
-            <p>
-                Este espacio está destinado para almacenar una amplia gama de mis gustos, 
-                la cual contiene muchas de mis cosas favoritas. Demos una vuelta.
-            </p>
-        </header>
 
-        <hr> <section>
-            <h2>Índice General</h2>
-            <nav>
-                <ol>
-                    <li><a href="cuentos_cortos.html">Cuentos cortos</a></li>
-                    <li><a href="poemas.html">Poemas</a></li>
-                    <li><a href="citas.html">Citas</a></li>
-                    <li><a href="mis_obras.html">Mis Obras</a></li>
-                    <li><a href="alexander.html"><i>Alexander</i></a> </li>
-                </ol>
-            </nav>
-        </section>
+    <header >
+        <nav >
+            <ul>
+                <li><a href="../../bitacoras/web_dev/web_dev.html">Inicio</a></li>
+                <li><a href="../../bitacoras/web_dev/cuentos_cortos.html">Cuentos</a></li>
+                <li><a href="../../bitacoras/web_dev/poemas.html">Poemas</a></li>
+                <li><a href="../../bitacoras/web_dev/mis_obras.html">Obras</a></li>
+                <li><a href="../../bitacoras/web_dev/alexander.html">Alexander</a></li>
+                <li><a href="../../bitacoras/web_dev/citas.html">Citas</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <br>
-
-        <section>
-            <h2>Lecturas Destacadas</h2>
-            
-            <article>
-                <h3>El Niño del Internet</h3>
-                <p><strong>Categoría:</strong> Cuento Corto</p>
-                <p>Una reflexión sobre la tecnología y la infancia en la era digital.</p>
-                <a href="cuentos_cortos.html">Leer cuento completo</a>
-            </article>
-
+    <main>
+        <h1 >Recopilaciones</h1>
+        <article class="" > <i >  Sentí lástima por los reyes que debían luchar por imponer su autoridad o que la
+            sobrellevaran a duras penas... </i> </article>
             <br>
 
-            <article>
-                <h3>Colección: La de Las Dos Cabezas</h3>
-                <p><strong>Categoría:</strong> Mis Obras / Arte Maya</p>
-                <p>Exploración visual y literaria sobre el rol de la mujer indígena y su fuerza social.</p>
-                <a href="mis_obras.html">Ver galería y texto</a>
-            </article>
+        <section id="">
+            <div class="row-3-col" >
+                <div class="column" >
+                    <img src="../../assets/images/pb_cic.gif" >
+                </div>
+                <div class="column" >
+                    <img src="../../assets/images/bug.gif" >
+                </div>
+                <div class="column">
+                    <img src="../../assets/images/icosaedro_animado.gif" >
+                </div>
+            </div>
+            <p >Planito Banana</p>
+        </section>
+
+        <hr>
+
+        <section id="indice">
+            <h2>Índice General</h2>
+            <ol>
+                <li><a href="#lecturas">Lecturas Destacadas</a></li>
+                <li><a href="">Recursos</a></li>
+                <li><a href="#galeria">Galería Visual</a></li>
+            </ol>
         </section>
 
         <br>
 
-        <section>
-            <h2>Recursos para Docentes</h2>
-            <p>Material complementario sobre innovación tecnológica y recursos para el aula.</p>
-            <ul>
-                <li>Guía de LMS para Literatura</li>
-                <li>Uso de narrativas digitales en educación</li>
-            </ul>
+        <section id="lecturas">
+            <h2>Lecturas Destacadas</h2>
+            <div class="row-2-col">
+                <article class="column">
+                    <h3>El Niño del Internet</h3>
+                    <img src="../../assets/images/v_dmc.png" alt="Portada cuento">
+                    <p>Cómo le explicas a un niño qué es Internet</p>
+                </article>
+
+                <article class="column">
+                    <h3>La de Las Dos Cabezas</h3>
+                    <img src="../../assets/images/dos_cabezas.png" alt="Arte Maya">
+                    <p>El rol de la mujer indígena en la sociedad</p>
+                </article>
+            </div>
         </section>
 
-        <section>
-            <a class="btn-outline-light btn" href="../../index.html " >Volver a Inicio</a>
+        <br>
+
+        <section id="galeria">
+            <h2>Galería de Inspiración</h2>
+            <div class="row-3-col">
+                <div class="column">
+                    <img src="../../assets/images/k.png" width="100%">
+                    <p>Dulce daga, sé gentil y rápida...</p>
+                </div>
+                <div class="column">
+                    <img src="../../assets/images/aquiles.png"  width="100%">
+                    <p>El interminable dolor del amor...</p>
+                </div>
+                <div class="column">
+                    <img src="../../assets/images/patroclo.png"  width="100%">
+                    <p>Así van a ser los días sin él...</p>
+                </div>
+            </div>  
         </section>
 
     </main>
 
     <hr>
 
-    <footer style="text-align: center;">
-        <p>Inspiración & Arte Digital | 2026</p>
-        <p><small>Guatemala</small></p>
+    <footer>
+        <div class="footer-columns">
+            <div class="f-col">
+                <h4>Sobre mí</h4>
+                <p>Artista y estudiante de tecnología</p>
+            </div>
+            <div class="f-col" id="navega">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="../../bitacoras/indexB.html">Inicio</a></li>
+                    <li><a href="../../bitacoras/web_dev/web_dev.html">Bitácora Desarrollo Web</a></li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h4>Comunidad</h4>
+                <p>Recursos para docentes e innovación tecnológica.</p>
+            </div>
+            <div class="f-col">
+                <h4>Contacto</h4>
+                <p>Suchitepéquez - Totonicapán, Guatemala.</p>
+            </div>
+        </div>
+        <div >
+            <p><small>&copy; 2026 | Planito Banana</small></p>
+        </div>
     </footer>
+
 </body>
 </html>
