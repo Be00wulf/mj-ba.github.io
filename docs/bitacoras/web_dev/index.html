@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>GangaWeb</title>
         <link rel="stylesheet" href="../css/style.css">
+		<script src="../../bitacoras/web_dev/app.js" defer ></script>
 	</head>
 
 
@@ -48,13 +49,15 @@
 				<article id="bug_id">
 					<p>Revisa los mejores precios</p>
 					<div class="row-2-col" >
-						<!-- aqui van a ir los 4 productos -->
 						<div class="column">
 							<img src="i2.png">
 							<h4>SMARTWATCH</h4>
 							<p>Las mejores ofertas</p>
 							<p> <s>Precio Q350</s> </p>
 							<h3>Oferta Q300</h3>
+							<!-- <a class="btn-outline-light btn" href="#ofertas">Comprar</a> -->
+							<a href="#ccmp">  <button type="button" onclick="agregarProducto('Smartwatch', 350, 300, 50)">Carrito</button>  </a> 
+							 <br>
 							<a href="#comprar"></a>
 						</div>
 
@@ -63,7 +66,9 @@
 							<h4>CAMARA</h4>
 							<p>Los mejores precions</p>
 							<p><s>Precio Q3500</s></p>
-							<h3>Oferta Q3000</h3>>s
+							<h3>Oferta Q3000</h3>
+							<!-- <a class="btn-outline-light btn" href="#ofertas">Comprar</a> -->
+							<a href="#ccmp">  <button type="button" onclick="agregarProducto('Camara', 3000, 3500, 500)">Carrito</button>  </a> 
 						</div>
 
 						<div class="column">
@@ -71,7 +76,11 @@
 							<h4>TX3-PRO</h4>
 							<p>Los mejores productos</p>
 							<p><s>Precio Q1000</s></p>
-							<h3>Oferta Q800</h3>>
+							<h3>Oferta Q800</h3>
+							<!-- <a class="btn-outline-light btn" href="#ofertas">Comprar</a> -->
+							<a href="#ccmp">  <button type="button" onclick="agregarProducto('TX3-PRO', 800, 1000, 200)" >Carrito</button>	   </a> 
+							<!-- <button type="button" onclick="agregarProducto('SMARTWATCH', 300)">Carrito</button>
+							<button type="button" onclick="agregarProducto('CAMARA', 3000)">Carrito</button> -->
 						</div>
 
 						<div class="column">
@@ -79,12 +88,59 @@
 							<h4>AUDIFONOS</h4>
 							<p>Las mejores lineas</p>
 							<p><s>Precio Q800</s></p>
-							<h3>Oferta Q700</h3>>
+							<h3>Oferta Q700</h3>
+							<!-- <a class="btn-outline-light btn" href="#ccmp">Comprar</a> -->
+							<a href="#ccmp">  <button type="button" onclick="agregarProducto('Audifonos', 700, 800, 100)" >Carrito</button>	   </a> 
+
 						</div>
 
 					</div>
 				</article>
 			</section>
+
+
+			<section id="ccmp">
+				<h2>Carrito de compras 7u7</h2>
+				<article>
+					<p>Vista previa de los productos agregados</p>
+					<!-- <p>Articulos:</p> -->
+
+					<table>
+						<thead>
+							<tr>
+								<th>Producto</th>
+								<th>Precio Normal</th>
+								<th>Precio Oferta</th>
+								<th>Cantidad</th>
+								<th>Subtotal</th>
+								<th>Acciones</th>
+								<!-- <th>Producto</th> -->
+							</tr>
+						</thead>
+					</table>
+					<ul id="lista-carrito">
+					</ul>
+				<h3 id="total-carrito">Total: Q0</h3>
+				
+				<div> 
+				<button onclick="vaciarCarrito()" class="btn">Vaciar Carrito</button>
+				<!-- <a href="#ofertas" class="btn-outline-light btn">Regresar a la Tienda </a> -->
+				<a href="#ofertas"> <button class="btn" > Regresar a la Tienda</button>  </a>
+				<button onclick="comprar()" class="btn">Finalizar mi compra </button>
+				</div>
+
+				<div class="row-3-col"> 
+					<div class="column f-col">
+					<a class="btn-outline-light"> <img src="carrito.gif"> </a>
+				</div>
+				</div>
+
+				</article>
+			</section>
+
+
+
+			
 
 			<section class="f-col" id="contacto">
 				<h2>Contactanos</h2>
